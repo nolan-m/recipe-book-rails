@@ -24,6 +24,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find_by(slug: params[:slug])
     @tags = Tag.all
+    @rating = Rating.new
+    @ratings = Rating.where(recipe_id: @recipe.id)
     render('show.html.erb')
   end
 

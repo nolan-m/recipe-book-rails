@@ -13,6 +13,9 @@
  *= require 'bootstrap'
  */
 
+.container {
+  padding-bottom: 50px;
+}
 .edit_form {
   display: none;
 }
@@ -27,3 +30,4 @@
   color: black;
   text-decoration: none;
 }
+

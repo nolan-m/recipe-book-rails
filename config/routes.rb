@@ -11,4 +11,6 @@ Recipes::Application.routes.draw do
   match '/tags/:slug', {via: :get, to: 'tags#show'}
   match '/tags/:slug', {via: [:put, :patch], to: 'tags#update'}
   match '/tags/:slug', {via: :delete, to: 'tags#destroy'}
+
+  match '/recipes/:slug', {via: :post, to: 'ratings#create'}
 end

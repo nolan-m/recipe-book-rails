@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Recipe do
   it { should have_and_belong_to_many :tags }
+  it { should have_many :ratings }
   it { should validate_presence_of :name }
   it { should validate_presence_of :ingredients }
   it { should validate_presence_of :directions }
@@ -15,13 +16,13 @@ describe Recipe do
     end
   end
 
-  context "#current_tags" do
-    it 'should list out the current tags' do
+  context "#save_score" do
+    it 'should save the average score' do
       recipe = Recipe.create(name: 'chocolate cookies', ingredients: "flour", directions: "mix")
-      tag1 = recipe.tags.create(name: "desserts")
-      tag2 = recipe.tags.create(name: "cookies")
-      tag3 = Tag.create(name: "dinner")
-      recipe.current_tags.should eq ([tag1, tag2])
+      score1 = recipe.ratings.create(score: 1)
+      score2 = recipe.ratings.create(score: 5)
+      recipe.save_score
+      recipe.average_rating.should eq 3
     end
   end
 end

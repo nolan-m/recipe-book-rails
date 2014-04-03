@@ -1,10 +1,12 @@
 <h1>Tags</h1>
+<hr>
 
 <ul>
   <% @tags.each do |tag| %>
     <li><a href="/tags/<%= tag.slug %>"><%= tag.name %></a></li>
   <%end%>
 </ul>
+<hr>
 
 <%= render('layouts/errors', object: @tag) %>
 

@@ -1,4 +1,5 @@
 <h1><%= @tag.name %></h1>
+<hr>
 
 <p>Recipies with this tag:</p>
 <ul>
@@ -7,6 +8,7 @@
   <% end %>
 </ul>
 <br>
+<hr>
 
 <div class='hide_buttons'><button class='edit'>Edit Tag</button>  <button><a href="/tags/<%= @tag.slug %>"
    data-confirm="Are You Sure?"

@@ -7,12 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <br><br><br>
 <div class="container">
-<%= flash[:notice] %>
-
-<%= yield %>
-
-<div class = "navbar navbar-default navbar-fixed-bottom">
+  <div class="col-md-12">
+    <%= flash[:notice] %>
+    <%= yield %><br><br><br><br><br><br><br>
+  </div>
+  <div class = "navbar navbar-default navbar-fixed-top">
   <div class"container">
     <a href="/" class="navbar-text pull-left">Recipe Page</a>
     <a href="/tags" class="navbar-text pull-left">Tags Page</a>
