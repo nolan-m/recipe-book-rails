@@ -14,6 +14,14 @@
   <% end %>
 </ul>
 
+<p>Tags</p>
+
+<ul>
+  <% @recipe.tags.each do |tag| %>
+    <li><a href="/tags/<%= tag.slug %>"><%= tag.name %></a></li>
+  <%end%>
+</ul>
+
 
 <div class='hide_buttons'><button class='edit'>Edit Recipe</button>  <button><a href="/recipes/<%= @recipe.slug %>"
    data-confirm="Are You Sure?"

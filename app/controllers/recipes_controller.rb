@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @recipe = Recipe.new
+    @tags = Tag.all
     render 'recipes/index.html.erb'
   end
 
@@ -9,6 +10,9 @@ class RecipesController < ApplicationController
     params[:recipe][:slug] = params[:recipe][:name].parameterize
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
+      Tag.where(id: params[:tags_id]).each do |tag|
+        @recipe.tags << tag
+      end
       flash[:notice] = "Recipe was added."
       redirect_to("/recipes/")
     else
@@ -19,6 +23,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find_by(slug: params[:slug])
+    @tags = Tag.all
     render('show.html.erb')
   end
 

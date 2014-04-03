@@ -8,8 +8,11 @@
 
 <%= render('layouts/errors', object: @recipe) %>
 
-<form action="/recipes" method="post">
-  <%= render('form') %>
-  <button>Create Recipe</button>
-</form>
+<div class='hide_buttons'><button class='edit'>Add New Recipe</button></div>
 
+<div class="edit_form">
+  <form action="/recipes" method="post">
+    <%= render('form') %>
+    <button>Create Recipe</button>
+  </form>
+</div>

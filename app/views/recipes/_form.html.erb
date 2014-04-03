@@ -4,3 +4,11 @@
 <textarea id="recipe_ingredients" name="recipe[ingredients]" rows=5 ><%= @recipe.ingredients %></textarea><br><br>
 <label for="recipe_directions">Directions:<br><em>(each step on new line)</em></label><br>
 <textarea id="recipe_directions" name="recipe[directions]" rows=5><%= @recipe.directions %></textarea><br><br>
+
+<label>Tags:</label>
+<br>
+<% @tags.each do |tag| %>
+<label class="checkbox-inline">
+  <input type="checkbox" name="tags_id[]" value="<%= tag.id %>"><%= tag.name %></input></label>
+<% end %>
+<br><br>

@@ -20,7 +20,7 @@ function initialize(){
     $('.edit_form').show();
     $('.hide_buttons').hide();
 
-  })
+  });
 }
 
 $(document).ready(initialize);
