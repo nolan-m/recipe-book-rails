@@ -10,4 +10,8 @@ class Recipe < ActiveRecord::Base
   def list_dir
     list = self.directions.split /[\r\n]+/
   end
+
+  def current_tags
+
+  end
 end

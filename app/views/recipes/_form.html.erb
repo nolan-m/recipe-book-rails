@@ -7,8 +7,14 @@
 
 <label>Tags:</label>
 <br>
-<% @tags.each do |tag| %>
-<label class="checkbox-inline">
-  <input type="checkbox" name="tags_id[]" value="<%= tag.id %>"><%= tag.name %></input></label>
+<% @recipe.tags.each do |tag| %>
+  <label class="checkbox-inline">
+    <input type="checkbox" name="tags_id[]" value="<%= tag.id %>" checked><%= tag.name %></input></label>
 <% end %>
+<% tags_not_used = @tags - @recipe.tags %>
+<% tags_not_used.each do |tag| %>
+  <label class="checkbox-inline">
+    <input type="checkbox" name="tags_id[]" value="<%= tag.id %>"><%= tag.name %></input></label>
+<% end %>
+
 <br><br>

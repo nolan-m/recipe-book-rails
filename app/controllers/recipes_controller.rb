@@ -31,6 +31,12 @@ class RecipesController < ApplicationController
     params[:recipe][:slug] = params[:recipe][:name].parameterize
     @recipe = Recipe.find_by(slug: params[:slug])
     if @recipe.update(params[:recipe])
+      @recipe.tags.each do |t|
+        @recipe.tags.delete(t)
+      end
+      Tag.where(id: params[:tags_id]).each do |tag|
+        @recipe.tags << tag
+      end
       flash[:notice] = "Recipe was updated."
       redirect_to("/recipes/#{@recipe.slug}")
     else

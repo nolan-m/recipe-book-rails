@@ -14,4 +14,14 @@ describe Recipe do
       recipe.list_dir.should eq %w(mix bake enjoy)
     end
   end
+
+  context "#current_tags" do
+    it 'should list out the current tags' do
+      recipe = Recipe.create(name: 'chocolate cookies', ingredients: "flour", directions: "mix")
+      tag1 = recipe.tags.create(name: "desserts")
+      tag2 = recipe.tags.create(name: "cookies")
+      tag3 = Tag.create(name: "dinner")
+      recipe.current_tags.should eq ([tag1, tag2])
+    end
+  end
 end
