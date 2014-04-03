@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
   end
 
   def update
+    params[:recipe][:slug] = params[:recipe][:name].parameterize
     @recipe = Recipe.find_by(slug: params[:slug])
     if @recipe.update(params[:recipe])
       flash[:notice] = "Recipe was updated."

@@ -11,7 +11,14 @@
 <%= flash[:notice] %>
 
 <%= yield %>
-<a href="/">Recipe Index Page</a>
+
+<div class = "navbar navbar-default navbar-fixed-bottom">
+  <div class"container">
+    <a href="/" class="navbar-text pull-left">Recipe Page</a>
+    <a href="/tags" class="navbar-text pull-left">Tags Page</a>
+  </div>
+</div>
+
 </div>
 </body>
 </html>

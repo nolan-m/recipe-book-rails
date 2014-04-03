@@ -1,0 +1,14 @@
+<h1>Tags</h1>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><a href="/tags/<%= tag.slug %>"><%= tag.name %></a></li>
+  <%end%>
+</ul>
+
+<%= render('layouts/errors', object: @tag) %>
+
+<form action="/tags" method="post">
+  <%= render('form') %>
+  <button>Create Tag</button>
+</form>

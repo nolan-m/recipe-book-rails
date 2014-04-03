@@ -1,0 +1,18 @@
+<h1><%= @tag.name %></h1>
+
+<p>Recipies with this tag:</p>
+<br>
+
+<div class='hide_buttons'><button class='edit'>Edit Tag</button>  <button><a href="/tags/<%= @tag.slug %>"
+   data-confirm="Are You Sure?"
+   data-method="delete"
+   rel="nofollow" class="delete_button" >Delete</a></button></div>
+<br>
+<div class='edit_form'>
+  <form action="/tags/<%= @tag.slug %>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    <%= render('form') %>
+    <button>Update Tag</button>
+  </form>
+
+</div>
