@@ -1,6 +1,11 @@
 <h1><%= @tag.name %></h1>
 
 <p>Recipies with this tag:</p>
+<ul>
+<% @tag.recipes.each do |recipe| %>
+  <li><a href="/recipes/<%= recipe.slug %>"><%= recipe.name %></a></li>
+  <% end %>
+</ul>
 <br>
 
 <div class='hide_buttons'><button class='edit'>Edit Tag</button>  <button><a href="/tags/<%= @tag.slug %>"
