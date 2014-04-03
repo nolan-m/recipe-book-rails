@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function initialize(){
+  $('.edit').click(function(){
+    $('.edit_form').show();
+    $('.hide_buttons').hide();
+
+  })
+}
+
+$(document).ready(initialize);
+$(document).on('page:load', initialize);

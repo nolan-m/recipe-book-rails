@@ -7,10 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="container">
 <%= flash[:notice] %>
 
 <%= yield %>
-
+<a href="/">Recipe Index Page</a>
+</div>
 </body>
 </html>

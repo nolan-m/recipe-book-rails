@@ -7,9 +7,24 @@
   <% end %>
 </ul>
 
-<p>Direction:</p>
+<p>Directions:</p>
 <ul>
   <% @recipe.list_dir.each do |direction| %>
     <li><%= direction %></li>
   <% end %>
 </ul>
+
+
+<div class='hide_buttons'><button class='edit'>Edit Recipe</button>  <button><a href="/recipes/<%= @recipe.slug %>"
+   data-confirm="Are You Sure?"
+   data-method="delete"
+   rel="nofollow" class="delete_button" >Delete</a></button></div>
+<br>
+<div class='edit_form'>
+  <form action="/recipes/<%= @recipe.slug %>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    <%= render('form') %>
+    <button>Update Recipe</button>
+  </form>
+
+</div>

@@ -21,4 +21,21 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by(slug: params[:slug])
     render('show.html.erb')
   end
+
+  def update
+    @recipe = Recipe.find_by(slug: params[:slug])
+    if @recipe.update(params[:recipe])
+      flash[:notice] = "Recipe was updated."
+      redirect_to("/recipes/#{@recipe.slug}")
+    else
+      render('/recipes/show.html.erb')
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find_by(slug: params[:slug])
+    @recipe.destroy
+    redirect_to("/")
+  end
+
 end
