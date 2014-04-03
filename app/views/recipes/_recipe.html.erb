@@ -1,0 +1,41 @@
+<h1><%= @object.name %></h1>
+<hr>
+
+<p>Ingredients:</p>
+<ul>
+  <% @object.list_ing.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+<p>Directions:</p>
+<ul>
+  <% @object.list_dir.each do |direction| %>
+    <li><%= direction %></li>
+  <% end %>
+</ul>
+
+<p>Tags:</p>
+
+<ul>
+  <% @object.tags.each do |tag| %>
+    <li><a href="/tags/<%= tag.slug %>"><%= tag.name %></a></li>
+  <%end%>
+</ul>
+<p>Average rating:</p>
+<ul>
+<% if @object.average_rating.nil? %>
+  <li><p>No rating yet.</p>
+  <% else %>
+  <% stars = "<span class='glyphicon glyphicon-star'></span>".html_safe %>
+  <% @object.average_rating.times do %>
+    <%= stars %>
+  <% end %>
+  <% empty = "<span class='glyphicon glyphicon-star-empty'></span>".html_safe %>
+  <% empty_stars = 5 - @object.average_rating %>
+  <% empty_stars.times do %>
+    <%= empty %>
+  <% end %>
+<% end %></li>
+</ul>
+<br>

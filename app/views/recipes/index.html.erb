@@ -1,6 +1,47 @@
 <h1>Recipes</h1>
 <hr>
 
+<div class="row">
+  <div class="col-md-12">
+    <h3>Featured Recipe:</h3>
+
+    <h4><%= @featured.name %></h4>
+    <hr>
+
+    <p>Ingredients:</p>
+    <ul>
+      <% @featured.list_ing.each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+
+    <p>Directions:</p>
+    <ul>
+      <% @featured.list_dir.each do |direction| %>
+        <li><%= direction %></li>
+      <% end %>
+    </ul>
+    <p>Average rating:</p>
+    <ul>
+    <% if @featured.average_rating.nil? %>
+      <li><p>No rating yet.</p>
+      <% else %>
+      <% stars = "<span class='glyphicon glyphicon-star'></span>".html_safe %>
+      <% @featured.average_rating.times do %>
+        <%= stars %>
+      <% end %>
+      <% empty = "<span class='glyphicon glyphicon-star-empty'></span>".html_safe %>
+      <% empty_stars = 5 - @featured.average_rating %>
+      <% empty_stars.times do %>
+        <%= empty %>
+      <% end %>
+    <% end %></li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+<h3>All Recipes</h3>
 <ul>
   <% @recipes.each do |recipe| %>
     <li><a href="/recipes/<%= recipe.slug %>"><%= recipe.name %></a></li>

@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @recipe = Recipe.new
+    @featured = Recipe.all.shuffle.first
     @tags = Tag.all
     render 'recipes/index.html.erb'
   end
