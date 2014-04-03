@@ -1,0 +1,14 @@
+<h1>Recipes</h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><a href="/recipes/<%= recipe.slug %>"><%= recipe.name %></a></li>
+  <%end%>
+</ul>
+
+<%= render('layouts/errors', object: @recipe) %>
+
+<form action="/recipes" method="post">
+  <%= render('form') %>
+  <button>Create Recipe</button>
+</form>

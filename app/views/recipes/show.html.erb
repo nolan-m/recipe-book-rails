@@ -1,0 +1,15 @@
+<h1><%= @recipe.name %></h1>
+
+<p>Ingredients:</p>
+<ul>
+  <% @recipe.list_ing.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+<p>Direction:</p>
+<ul>
+  <% @recipe.list_dir.each do |direction| %>
+    <li><%= direction %></li>
+  <% end %>
+</ul>
