@@ -1,17 +1,12 @@
 <br>
 <label for="rating_score">Rating:</label><br>
-<div class="container">
-    <div class="alert alert-success pull-right hide">
-      <button type="button" class="close" data-dismiss="alert">×</button>
-      You gave a rating of <span id="count">0</span> star(s)
-    </div>
-      <input name="rating[score]" id="score" type="hidden">
+<div class="col-md-12">
     <div class="row lead">
         <div id="stars" class="starrr"></div>
     </div>
 </div>
 
-
+<input name="rating[score]" id="score" type="hidden">
 <label for="rating_review">Review:</label><br>
 <textarea class="col-md-6" id="rating_review" name="rating[review]" rows="5"><%= @rating.review %></textarea>
 <br>

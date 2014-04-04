@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def create
     params[:recipe][:slug] = params[:recipe][:name].parameterize
+    params[:recipe][:average_rating] = 0
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
       Tag.where(id: params[:tags_id]).each do |tag|

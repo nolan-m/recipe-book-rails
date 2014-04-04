@@ -22,6 +22,7 @@ function initialize(){
   });
 
   $(".alert").addClass("in").fadeOut(3500);
+
 // starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 
@@ -132,7 +133,7 @@ $( document ).ready(function() {
   $('#stars').on('starrr:change', function(e, value){
     $('#count').html(value);
     $('#score').val(value);
-    $('.alert').removeClass('hide').show().delay(1000).addClass("in").fadeOut(3500);
+
   });
 
 });

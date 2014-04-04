@@ -13,8 +13,18 @@
  *= require 'bootstrap'
  */
 
+
+body {
+  background: url(http://www.johnmariani.com/archive/2010/100627/Fred=diner.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .container {
+  background-color:
   padding-bottom: 50px;
+  background: rgba(255, 255, 255, 0.7);
 }
 .edit_form {
   display: none;
