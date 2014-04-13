@@ -1,5 +1,6 @@
 #Recipe Sharing App
-New concepts:  Partials in Rails.
+
+###New concepts:  Partials in Rails.
 
 As a contributor, I want to post new recipes, so that I can share them with others.
 
