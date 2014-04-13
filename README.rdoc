@@ -1,28 +1,12 @@
-== README
+#Recipe Sharing App
+New concepts:  Partials in Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+As a contributor, I want to post new recipes, so that I can share them with others.
 
-Things you may want to cover:
+As a contributor, I want to tag my recipes, so that they are easier to find.
 
-* Ruby version
+As a cook, I want to choose a tag and see what recipes have that tag.
 
-* System dependencies
+As a cook, I want to give a recipe 1 through 5 stars, so that I can share with others what I think of a recipe.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+As a cook, I want to see recipes ordered by the number of stars they have, so that I can focus on the best ones.
